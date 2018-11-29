@@ -25,8 +25,8 @@ namespace MyNamespace
     template<typename EnumT>
     static EnumT StringToEnum(const QString value)
     {
-        // nice conversion, but ok
-        return QMetaEnum::fromType<EnumT>().keyToValue(value.toUpper().toStdString().c_str());
+        // nice conversion for the sting and the enum ...
+        return (EnumT)QMetaEnum::fromType<EnumT>().keyToValue(value.toUpper().toStdString().c_str());
     }
 }
 
